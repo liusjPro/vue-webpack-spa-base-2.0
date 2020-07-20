@@ -78,7 +78,7 @@
             g.hideLoading();
             this.$f7.data.autoadd.modal.visible = false;
             $$('.autoadd-modal').attr('data-viewstatus','false');
-            $$("html").css({ 'position': 'static'});
+            $$("html").css({ 'position': 'assets'});
             $$("body").css({ 'overflow': 'auto'});
             $$(".page-content").css({ 'overflow-y': 'auto'});
             $$(".page-content").css({ 'overflow-x': 'auto'});
@@ -93,7 +93,7 @@
           addEvent.$emit('autoaddtype', this.$f7.data.autoadd.enable);
           this.$f7.data.autoadd.modal.visible= false;
           $$('.autoadd-modal').attr('data-viewstatus','false');
-          $$("html").css({ 'position': 'static'});
+          $$("html").css({ 'position': 'assets'});
           $$("body").css({ 'overflow': 'auto'});
           $$(".page-content").css({ 'overflow-y': 'auto'});
           $$(".page-content").css({ 'overflow-x': 'auto'});

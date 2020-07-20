@@ -1,0 +1,12 @@
+/* eslint-disable */
+module.exports = {
+	"STATUS": 0,
+	"MAINTENANCE_FLG": 0,
+	"SYSTEM_DATE": "2020\/05\/01 20:06:22",
+	"BRAND_ID": 71,
+	"ORDER_AMOUNT": 16,
+	"RESERVE_DT": "2020\/05\/01 20:06:12",
+	"RESERVATION_EXCUTED_FLG": 1,
+	"VALUATION_AMOUNT_PER_BRAND": 16,
+	"REAL_POINT": 11476
+}

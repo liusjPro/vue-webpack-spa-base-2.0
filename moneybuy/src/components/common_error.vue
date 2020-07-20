@@ -3,7 +3,7 @@
   <div class="sheet-modal sheet-modal-error" style="z-index:99999;">
     <div class="sheet-modal-inner">
       <div class="block icon">
-        <img src="/static/images/common/icon_error.svg" alt="">
+        <img src="../assets/images/common/icon_error.svg" alt="">
       </div>
       <div class="block text1"><p v-html="tit"></p></div>
       <div class="block text2"><p v-html="msg"></p></div>

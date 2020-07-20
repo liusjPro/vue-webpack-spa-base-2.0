@@ -10,13 +10,13 @@
       <div class="block course_info challenge" v-on:click="changeCourse(0)" sheet-close=".sheet-modal-course-selection">
         <div class="row1">
           <div class="col icon">
-            <img src="/static/images/course/challenge/icon.svg" alt="">
+            <img src="../assets/images/course/challenge/icon.svg" alt="">
           </div>
           <div class="col data">
             <div class="row2 name">
               <p class="course_name" >チャレンジコース</p>
               <p class="badge-image badge-autoadd">
-                <img alt="" src="/static/images/common/badge_autoadd.svg">
+                <img alt="" src="../assets/images/common/badge_autoadd.svg">
               </p>
             </div>
             <div class="row2 amount">
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="col arrow">
-            <img src="/static/images/common/arrow_r_blue.svg" alt="">
+            <img src="../assets/images/common/arrow_r_blue.svg" alt="">
           </div>
         </div>
       </div>
@@ -32,13 +32,13 @@
       <div class="block course_info standard" v-on:click="changeCourse(1)" sheet-close=".sheet-modal-course-selection">
         <div class="row1">
           <div class="col icon">
-            <img src="/static/images/course/standard/icon.svg" alt="">
+            <img src="../assets/images/course/standard/icon.svg" alt="">
           </div>
           <div class="col data">
             <div class="row2 name">
               <p class="course_name">スタンダードコース</p>
                <p class="badge-image badge-autoadd">
-                 <img alt="" src="/static/images/common/badge_autoadd.svg">
+                 <img alt="" src="../assets/images/common/badge_autoadd.svg">
                </p>
             </div>
             <div class="row2 amount">
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="col arrow">
-            <img src="/static/images/common/arrow_r_blue.svg" alt="">
+            <img src="../assets/images/common/arrow_r_blue.svg" alt="">
           </div>
         </div>
       </div>

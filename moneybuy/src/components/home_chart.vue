@@ -1,8 +1,8 @@
 <template>
       <f7-block class="oparation_info" style="position:relative;">
         <f7-block class="text2_1 nofirst">
-        　　<span class="yellow-tip">100万ユーザーが運用中！</span>
-      　</f7-block>
+        <span class="yellow-tip">100万ユーザーが運用中！</span>
+      </f7-block>
         <div class="row row1">
           <div class="col">
             <p class="row1_1">
@@ -193,12 +193,12 @@
         // {"month":0,"possibleLatestDate":null}は初期状態
         // 一回リクエストしたら、monthにリクエストしたときのNカ月を保存
         // possibleLatestDateにはその時点論理上サーバーから返される最大日付を保存する
-        // 　（0時〜5時59分59秒：二日前の日付、6時〜23時59分59秒：一日前の日付）
-        // 　サーバーからすでにpossibleLatestDateと一致した日付のデータが返された場合、possibleLatestDateがその翌日で保存する。
+        //  （0時〜5時59分59秒：二日前の日付、6時〜23時59分59秒：一日前の日付）
+        // サーバーからすでにpossibleLatestDateと一致した日付のデータが返された場合、possibleLatestDateがその翌日で保存する。
         // グラフデータを取得できなかった場合：
-        // 　mindateにnullを保存
+        // mindateにnullを保存
         // グラフデータを取得した場合
-        // 　mindateに取得したデータに最小日付を保存
+        // mindateに取得したデータに最小日付を保存
         month = month * 1; // convert to int
         // get data from localstorage
         let data=localStorage.getItem('homeChartDat:'+this.$root.tmpStatus.CLIENT_ID), $pm;
@@ -323,7 +323,7 @@
           y: val,
           marker:{
             enabled: true,
-            symbol: 'url(/static/images/common/graph_mark.svg)'
+            symbol: 'url(../assets/images/common/graph_mark.svg)'
           }
         };
       },
@@ -338,7 +338,7 @@
           PRINCIPAL_AMOUNT: g.fmtAmount(total.PRINCIPAL_AMOUNT),
           PROFIT_LOSS_AMOUNT: g.fmtAmount(total.PROFIT_LOSS_AMOUNT, true),
           PROFIT_LOSS_RATE: g.fmtRate(total.PROFIT_LOSS_RATE, true),
-          icon: '/static/images/common/icon_arrow_'+icon+'_circle.svg',
+          icon: '../assets/images/common/icon_arrow_'+icon+'_circle.svg',
           color: color,
         };
       },

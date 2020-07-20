@@ -5,9 +5,9 @@
      </f7-nav-left>
       <f7-nav-title>ボーナス運用</f7-nav-title>
       <f7-nav-right>
-        <f7-link href="/faq_list/"><img src="/static/images/common/header/icon_question.svg"></f7-link>
+        <f7-link href="/faq_list/"><img src="../../assets/images/common/header/icon_question.svg"></f7-link>
         <f7-link class="external" :href="this.$f7.data.backUrl">
-          <img src="/static/images/common/header/icon_close.svg">
+          <img src="../../assets/images/common/header/icon_close.svg">
         </f7-link>
       </f7-nav-right>
     </f7-navbar>
@@ -22,7 +22,7 @@
         <span>PayPayボーナスを運用してみよう</span>
       </f7-block>
       <f7-block class="graph">
-        <img src="/static/images/home/fig_first_mv.svg" alt="">
+        <img src="../../assets/images/home/fig_first_mv.svg" alt="">
       </f7-block>
       <f7-block class="text1_3">
         <p>＊</p>
@@ -48,7 +48,7 @@
       </f7-block>
       <f7-block class="bnr_autoadd bnr_autoadd_first" v-on:click="sendAutoEvent(true)" v-if="autoaddtype == 0">
         <a href="/autoadd/">
-          <img class="w100per" src="/static/images/campaign/bnr2.svg" alt="">
+          <img class="w100per" src="../../assets/images/campaign/bnr2.svg" alt="">
         </a>
       </f7-block>
 
@@ -79,10 +79,10 @@
                 <p class="course_name">
                   <span class="name">{{row.BRAND_NM}}</span><br>
                   <span class="badge-image badge-autoadd" v-if="key == 0 && autoaddtype == 2">
-                    <img alt="" src="/static/images/common/badge_autoadd.svg">
+                    <img alt="" src="../../assets/images/common/badge_autoadd.svg">
                   </span>
                   <span class="badge-image badge-autoadd" v-if="key == 1 && autoaddtype == 1">
-                    <img alt="" src="/static/images/common/badge_autoadd.svg">
+                    <img alt="" src="../../assets/images/common/badge_autoadd.svg">
                   </span>
                 </p>
                 <p class="amount_cnt">
@@ -95,13 +95,13 @@
                 </p>
               </div>
               <div class="arrow">
-                <img src="/static/images/common/arrow_r_blue.svg" alt="">
+                <img src="../../assets/images/common/arrow_r_blue.svg" alt="">
               </div>
             </div>
           </f7-block>
         </a>
         <f7-block class="autoadd_bnr" v-show="autoaddtype == 0">
-          <a href="/autoadd/" v-on:click="sendAutoEvent(false)" > <img class="w100per" src="/static/images/campaign/bnr2.svg" alt=""> </a>
+          <a href="/autoadd/" v-on:click="sendAutoEvent(false)" > <img class="w100per" src="../../assets/images/campaign/bnr2.svg" alt=""> </a>
         </f7-block>
       </template>
     </template>
@@ -127,7 +127,7 @@
             if(err === null) err = res;
             return;
           }
-          gtag('config', trackingId, {'user_id': res.CLIENT_ID});
+          gtag('config', "trackingId", {'user_id': res.CLIENT_ID});
           res.ATTENTION_FLG = res.ATTENTION_FLG*1;
           this.$root.set('ATTENTION_FLG', res.ATTENTION_FLG);
           // POSSESS_BRAND_FLG: 0=保有していない　1=保有している 2=全売却
@@ -185,9 +185,9 @@
           rec_send_Event.$emit('autoaddtype', this.$f7.data.autoadd.enable);
         });
         // 起動時ユーザステータス取得、銘柄マスタ取得、保有状況取得の３つが終わったら下記後続処理をする
-        // 　ローディング完了
-        // 　保有している場合の初回画面表示
-        // 　保有している場合チャートデータ取得＆チャート描画
+        // ローディング完了
+        // 保有している場合の初回画面表示
+        // 保有している場合チャートデータ取得＆チャート描画
         Promise.all([$status, $brands, $assets, $noticeReq, $autoSweep]).then(() => {
           g.hideLoading();
           if(err) return !rewrite && this.$root.error(err);

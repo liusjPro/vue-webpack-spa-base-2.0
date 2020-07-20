@@ -60,4 +60,33 @@ function copyAssets () {
   return gulp.src(assetsPath).pipe(gulp.dest(`${DEST_PATH}/assets`))
 }
 
-gulp.task('default', gulp.parallel(copyAppJson, copyMockJson, copyPageJson, copyAssets))
+/////////////////// Images ///////////////////////////////////
+function copyImageJson() {
+  return gulp.src(`${SOURCE_PATH}/assets/images/**/*`)
+    .pipe(tap(function(_, t) {
+      return t.through(gulp.dest, [`${DEST_PATH}/assets/images`])
+    }))
+}
+
+/////////////////// Icons Images ///////////////////////////////////
+function copyIconsJson() {
+  return gulp.src(`${SOURCE_PATH}/assets/icons/*`)
+    .pipe(tap(function(_, t) {
+      return t.through(gulp.dest, [`${DEST_PATH}/assets/icons`])
+    }))
+}
+
+function copyCommJson() {
+  return gulp.src(`${SOURCE_PATH}/assets/*.json`)
+    .pipe(tap(function(_, t) {
+      return t.through(gulp.dest, [`${DEST_PATH}/assets`])
+    }))
+}
+function copyCommJs() {
+  return gulp.src(`${SOURCE_PATH}/assets/*.js`)
+    .pipe(tap(function(_, t) {
+      return t.through(gulp.dest, [`${DEST_PATH}/assets`])
+    }))
+}
+
+gulp.task('default', gulp.parallel(copyAppJson, copyMockJson, copyPageJson, copyAssets, copyCommJson, copyCommJs, copyImageJson, copyIconsJson))

@@ -1,0 +1,33 @@
+module.exports = {
+	"STATUS": 0,
+	"MAINTENANCE_FLG": 0,
+	"SYSTEM_DATE": "2020/04/30 20:35:12",
+	"REAL_POINT": 0,
+	"PROFIT_LOSS_INFO_TOTAL": {
+		"PRINCIPAL_AMOUNT": 0,
+		"VALUATION_AMOUNT": 0,
+		"PROFIT_LOSS_AMOUNT": 0,
+		"PROFIT_LOSS_RATE": "-"
+	},
+	"PROFIT_LOSS_INFO_BRAND_LIST": 
+	[{
+			"BRAND_ID": 71,
+			"PROFIT_LOSS_INFO": {
+				"VALUATION_AMOUNT": 0,
+				"PROFIT_LOSS_AMOUNT": 0,
+				"PROFIT_LOSS_RATE": "-"
+			}
+		}, 
+		{
+		"BRAND_ID": 72,
+		"PROFIT_LOSS_INFO": {
+			"VALUATION_AMOUNT": 0,
+			"PROFIT_LOSS_AMOUNT": 0,
+			"PROFIT_LOSS_RATE": "-"
+		}
+	}],
+	"GRAPH_DATA": {
+		"DATE": "2020\/04\/30",
+		"VALUE": 0
+	}
+}

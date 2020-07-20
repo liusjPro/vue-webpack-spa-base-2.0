@@ -6,7 +6,7 @@
         <p>「自動追加」登場！</p>
       </div>
       <div class="modal-block modal-block-image">
-        <img class="icon" src="/static/images/autoaddmodal/mv.svg" alt="">
+        <img class="icon" src="../assets/images/autoaddmodal/mv.svg" alt="">
       </div>
       <div class="modal-block modal-block-text">
         <span>自動追加を設定すると、付与されるPayPayボーナスを自動的に運用にまわすことができます。</span>
@@ -43,7 +43,7 @@
         }
         this.$f7.data.autoadd.modal.visible = false;
         $$('.notice-autoadd-modal').attr('data-viewstatus','false');
-        $$("html").css({ 'position': 'static'});
+        $$("html").css({ 'position': 'assets'});
         $$("body").css({ 'overflow': 'auto'});
         $$(".page-content").css({ 'overflow-y': 'auto'});
         $$(".page-content").css({ 'overflow-x': 'auto'});

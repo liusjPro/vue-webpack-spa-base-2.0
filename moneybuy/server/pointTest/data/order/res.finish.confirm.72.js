@@ -1,0 +1,11 @@
+/* eslint-disable */
+module.exports =  {
+	"STATUS": 0,
+	"MAINTENANCE_FLG": 0,
+	"SYSTEM_DATE": "2020\/05\/01 20:01:45",
+	"BRAND_ID": 72,
+	"ORDER_UUID": "15883309051052282669",
+	"ORDER_AMOUNT": 51,
+	"VALUATION_AMOUNT": 162,
+	"ORDERTIME_LIMIT": 10000
+}

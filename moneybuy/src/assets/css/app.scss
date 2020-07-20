@@ -275,7 +275,7 @@ b{
 					padding:0;
 					.item-inner{
 						&:berofe{
-							content:url(/static/images/common/arrow_r_blue.svg);
+							content:url(../images/common/arrow_r_blue.svg);
 						}
 						&:after{
 						}
@@ -2531,7 +2531,7 @@ div[data-name="withdraw_bonus"]{
 				align-itemns:center;
 				border-bottom:1px solid #f2f2f2;
 				&:before{
-					content:url(/static/images/common/arrow_r_blue.svg);
+					content:url(../images/common/arrow_r_blue.svg);
 					position: absolute;
 					top: 50%;
 					width: 8px;
@@ -3531,7 +3531,7 @@ div[data-name="etc"]{
 										justify-content:flex-start;
 										align-itemns:center;
 										&:before{
-											content:url(/static/images/common/arrow_r_blue.svg);
+											content:url(../images/common/arrow_r_blue.svg);
 										}
 										.icon{
 											width:40px;
@@ -3541,7 +3541,7 @@ div[data-name="etc"]{
 											justify-content:center;
 											align-itemns:center;
 											img{
-												&[src="/static/images/common/icon_checklist.svg"]{
+												&[src="../images/common/icon_checklist.svg"]{
 													position:relative;
 													left:2px;
 												}

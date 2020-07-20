@@ -28,21 +28,21 @@
     <!-- Tabbar for switching views-tabs -->
     <f7-toolbar tabbar labels top>
       <f7-link tab-link="#view-home" data-path="/" @click="headerCurrent(0), analytics($event)" tab-link-active class="current">
-        <p class="tabbar-icon"> <img alt="" src="/static/images/common/header/icon_graph.svg"></p>
+        <p class="tabbar-icon"> <img alt="" src="../assets/images/common/header/icon_graph.svg"></p>
         <p class="tabbar-label">運用状況</p>
       </f7-link>
 
       <f7-link tab-link="#view-log" data-path="/operation_history/" @click="headerCurrent(1), analytics($event)" tab-link-active>
-        <p class="tabbar-icon"><img alt="" src="/static/images/common/header/icon_list.svg"></p>
+        <p class="tabbar-icon"><img alt="" src="../assets/images/common/header/icon_list.svg"></p>
         <p class="tabbar-label">運用履歴</p>
       </f7-link>
       <f7-link tab-link="#view-oparation-empty" data-path="/course_select_sheet/" @click="headerCurrent(2), createOperationSheet($event)" tab-link-active >
-        <p class="tabbar-icon"><img alt="" src="/static/images/common/header/icon_assets_plus.svg"></p>
+        <p class="tabbar-icon"><img alt="" src="../assets/images/common/header/icon_assets_plus.svg"></p>
         <p class="tabbar-label">運用する</p>
       </f7-link>
       <f7-link tab-link="#view-etc" data-path="/etc/" @click="headerCurrent(3), analytics($event)" tab-link-active >
         <div class="badge" v-if="noticeAlert > 0"></div>
-        <p class="tabbar-icon"><img alt="" src="/static/images/common/header/icon_threepoint.svg"></p>
+        <p class="tabbar-icon"><img alt="" src="../assets/images/common/header/icon_threepoint.svg"></p>
         <p class="tabbar-label">その他</p>
       </f7-link>
     </f7-toolbar>
@@ -110,7 +110,7 @@
 
   <common_error ref="common_error"></common_error>
   <sheet_modal_course_selection ref="sheet_modal_course_selection"></sheet_modal_course_selection>
-　<!-- 注意事項 -->
+  <!-- 注意事項 -->
   <f7-block class="modal attention-modal" data-viewstatus="false"  data-checkstatus="false">
     <div class="modalContent">
       <div class="modal-block modal-block-title">注意事項</div>
@@ -130,8 +130,8 @@
         </perfect-scrollbar>
       </div>
       <div class="modal-block modal-block-check" v-on:click="checkAttentionModal()">
-        <img class="check_true"  src="/static/images/common/icon_check_green.svg" alt="">
-        <img class="check_false" src="/static/images/common/icon_check_gray.svg"  alt="">
+        <img class="check_true"  src="../assets/images/common/icon_check_green.svg" alt="">
+        <img class="check_false" src="../assets/images/common/icon_check_gray.svg"  alt="">
         <span>注意事項を確認しました</span>
       </div>
       <div class="modal-block modal-block-btn">
@@ -140,7 +140,7 @@
       </div>
     </div>
   </f7-block>
-　<!-- おすすめ -->
+  <!-- おすすめ -->
   <f7-block class="modal survey-modal" data-viewstatus="false" data-brandid=''>
     <div class="modalContent">
       <div class="modal-block modal-block-title">あなたにおすすめの<br>運用コースは</div>
@@ -154,7 +154,7 @@
   <f7-block class="modal campaign-modal" data-viewstatus="false">
     <div class="modalContent">
       <div class="modal-block modal-block-image">
-        <img class="check_true"  src="/static/images/campaign/modal_mv.svg" alt=""></div>
+        <img class="check_true"  src="../assets/images/campaign/modal_mv.svg" alt=""></div>
       <div class="modal-block modal-block-text">
         <p>運用履歴から運用中残高を<br>ご確認ください</p>
       </div>
@@ -235,7 +235,7 @@
                   B:'チャレンジコース'
                 }
               },
-              backUrl:backUrl,
+              backUrl:'',
               header:{
                 data:[
                   {
@@ -492,9 +492,9 @@
           loop: true,
           autoplay: true,
           rendererSettings: {
-            viewBoxSize: '-34 0 164 164', // modify position for /static/pploading.json
+            viewBoxSize: '-34 0 164 164', // modify position for /assets/pploading.json
           },
-          path: '/static/pploading.json'
+          path: '../assets/pploading.json'
         });
         this.$f7.data.attention.checked = false;
         this.headerBadge();
@@ -512,7 +512,7 @@
         $$('.survey-modal').attr('data-viewstatus','false');
         var chosed_brandid = $$('.survey-modal').attr('data-brandid');
 
-        $$("html").css({ 'position': 'static'});
+        $$("html").css({ 'position': 'assets'});
         $$("body").css({ 'overflow': 'auto'});
         $$(".page-content").css({ 'overflow-y': 'auto'});
         $$(".page-content").css({ 'overflow-x': 'auto'});
@@ -536,7 +536,7 @@
           g.hideLoading();
           $$('.attention-modal').attr('data-viewstatus','false');
 
-          $$("html").css({ 'position': 'static'});
+          $$("html").css({ 'position': 'assets'});
           $$("body").css({ 'overflow': 'auto'});
           $$(".page-content").css({ 'overflow-y': 'auto'});
           $$(".page-content").css({ 'overflow-x': 'auto'});
@@ -557,7 +557,7 @@
           g.hideLoading();
           // this.$f7.data.campaign.visible= false;
           $$('.campaign-modal').attr('data-viewstatus','false');
-          $$("html").css({ 'position': 'static'});
+          $$("html").css({ 'position': 'assets'});
           $$("body").css({ 'overflow': 'auto'});
           $$(".page-content").css({ 'overflow-y': 'auto'});
           $$(".page-content").css({ 'overflow-x': 'auto'});
@@ -590,7 +590,7 @@
         // if(!$router){
           // this.$f7.actions.open('.sheet-modal-error');
           // this.$refs.common_error.catchError(err, btn);
-        // }　
+        // }
         this.$f7.sheet.close();
         if(err.autorefresh && (!err._ekey || (err._ekey && err._ekey != 'maintenance' && err._ekey != 'timeout'))) {
           // console.log("ignore autorefresh api error");
@@ -667,7 +667,7 @@
                     <div class="row2 name">
                       <p class="course_name">${theBrand.BRAND_NM}</p>
                       <p id="autoSetting${theBrand.BRAND_ID}" class="badge-image badge-autoadd">
-                      　<img alt="" src="/static/images/common/badge_autoadd.svg">
+                       <img alt="" src="../assets/images/common/badge_autoadd.svg">
                       </p>
                     </div>
                     <div class="row2 amount">
@@ -675,7 +675,7 @@
                     </div>
                   </div>
                   <div class="col arrow">
-                    <img src="/static/images/common/arrow_r_blue.svg" alt="">
+                    <img src="../assets/images/common/arrow_r_blue.svg" alt="">
                   </div>
                 </div>
               </div>

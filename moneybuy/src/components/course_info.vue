@@ -7,7 +7,7 @@
       <div class="col text">
         <p class="name">{{brand.BRAND_NM}}</p>
         <p class="badge-image badge-autoadd" v-if="checkAutosweep()">
-          <img alt="" src="/static/images/common/badge_autoadd.svg">
+          <img alt="" src="../assets/images/common/badge_autoadd.svg">
         </p>
       </div>
     </div>
@@ -92,7 +92,7 @@
 
     <p class="bnr_autoadd" v-if="this.$f7.data.autoadd.enable == 0" v-on:click="sendAutoEvent()">
       <a href="/autoadd/">
-        <img class="w100per" src="/static/images/campaign/bnr2.svg" alt="">
+        <img class="w100per" src="../assets/images/campaign/bnr2.svg" alt="">
       </a>
     </p>
     <p class="btn_withdraw" v-if="this.courseHasBuy">
@@ -449,7 +449,7 @@
           y: val,
           marker:{
             enabled: true,
-            symbol: 'url(/static/images/common/graph_mark.svg)'
+            symbol: 'url(../assets/images/common/graph_mark.svg)'
           }
         };
       },
@@ -463,7 +463,7 @@
           PRINCIPAL_AMOUNT: g.fmtAmount(total.PRINCIPAL_AMOUNT),
           PROFIT_LOSS_AMOUNT: g.fmtAmount(total.PROFIT_LOSS_AMOUNT, true),
           PROFIT_LOSS_RATE: g.fmtRate(total.PROFIT_LOSS_RATE, true),
-          icon: '/static/images/common/icon_arrow_'+icon+'_circle.svg',
+          icon: '../assets/images/common/icon_arrow_'+icon+'_circle.svg',
           color: color,
         };
       },
