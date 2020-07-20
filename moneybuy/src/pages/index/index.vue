@@ -118,9 +118,9 @@
     components: { home_chart },
     data() {
       let rewrite = this.initRouter();
-      // this.$root.ini({wait:true});
       !rewrite && g.showLoading();
       let brands=null, assets=null, err=null;
+      console.log('rewriterewriterewriterewriterewriterewriterewrite  ')
       if(!rewrite){
         let $status = g.xhr('/user/status').then(res => {
           if(res._ekey) {
@@ -216,7 +216,7 @@
       return {
         ready: false, 
         POSSESS_BRAND_FLG: null, 
-        CAMPAIGN_APPLIED_FLG: 0,
+        CAMPAIGN_aLIED_FLG: 0,
         autoaddtype: 0,
         startAuto: 0,
         brands: null, 

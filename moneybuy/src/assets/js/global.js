@@ -505,6 +505,7 @@ window.ES = (function(){
      */
     $.xhr = function (opt) {
         return new Promise((resolve, reject) => {
+            console.log(opt)
             // prepare
             if (typeof opt === 'string') opt = { url: opt };
             opt = $.extend({ code: 0, res: '' }, opt, $.xhr.opt);

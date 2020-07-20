@@ -174,17 +174,15 @@
 </template>
 
 <script>
-
-  import faq from './../assets/js/faq.js';
-  import rec_send_Event from './../assets/js/event.js'
-  import common_error from './common_error.vue';
+  import faq from '../assets/js/faq.js';
+  import rec_send_Event from '../assets/js/event.js'
+  import common_error from '../components/common_error.vue';
   import sheet_modal_course_selection from '../components/course_selection.vue';
   import autoaddModal from '../components/modal_autoadd.vue';
   import modal_notice_autoadd from '../components/modal_notice_autoadd.vue';
   // Import Dom7
   import Dom7 from 'dom7/dist/dom7.js';
   var $$ = Dom7;
-  
   //Import vue2-perfect-scrollbar for scrollbar
   import { PerfectScrollbar } from 'vue2-perfect-scrollbar';
 
@@ -486,16 +484,16 @@
         else Object.keys(mix).forEach(k=>this.iniData[k]=mix[k]);
       },
       init(){
-        var lottieObj2 = lottie.loadAnimation({
-          container: document.getElementById('lottie-loading'),
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          rendererSettings: {
-            viewBoxSize: '-34 0 164 164', // modify position for /assets/pploading.json
-          },
-          path: '../assets/pploading.json'
-        });
+        // var lottieObj2 = lottie.loadAnimation({
+        //   container: document.getElementById('lottie-loading'),
+        //   renderer: 'svg',
+        //   loop: true,
+        //   autoplay: true,
+        //   rendererSettings: {
+        //     viewBoxSize: '-34 0 164 164', // modify position for /assets/pploading.json
+        //   },
+        //   path: '../assets/pploading.json'
+        // });
         this.$f7.data.attention.checked = false;
         this.headerBadge();
       },
