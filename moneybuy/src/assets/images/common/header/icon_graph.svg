@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group" transform="translate(0.75 0.75)">
+    <path d="M26.9231 25.8462C27.5178 25.8462 28 26.3283 28 26.9231C28 27.5178 27.5178 28 26.9231 28L3.94872 28C1.7679 28 0 26.2321 0 24.0513L0 1.07692C0 0.482155 0.482155 0 1.07692 0C1.67169 0 2.15385 0.482155 2.15385 1.07692L2.15385 24.0513C2.15385 25.0426 2.95744 25.8462 3.94872 25.8462L26.9231 25.8462Z" id="Path" fill="#F8F8F8" stroke="none" />
+    <path d="M0 16L5.85714 5L11.1429 12L17 0" transform="translate(8 4)" id="Path-3" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" transform="translate(5.5 17.5)" id="Oval" fill="#FFFFFF" stroke="none" />
+    <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" transform="translate(11.5 6.5)" id="Oval" fill="#FFFFFF" stroke="none" />
+    <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" transform="translate(16.5 13)" id="Oval" fill="#FFFFFF" stroke="none" />
+    <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" transform="translate(22.5 1.5)" id="Oval" fill="#FFFFFF" stroke="none" />
+  </g>
+</svg>
