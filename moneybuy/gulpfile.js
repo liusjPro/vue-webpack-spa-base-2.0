@@ -68,7 +68,6 @@ function copyImageJson() {
     }))
 }
 
-/////////////////// Icons Images ///////////////////////////////////
 function copyIconsJson() {
   return gulp.src(`${SOURCE_PATH}/assets/icons/*`)
     .pipe(tap(function(_, t) {

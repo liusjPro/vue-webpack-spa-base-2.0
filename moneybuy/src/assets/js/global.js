@@ -612,9 +612,9 @@ window.ES = (function(){
 // global app
 window.g = (function(){
     const g = {};
-
+    console.log(process.env)
     // config
-    g._apiBase = process.env.apiBase; // 接口路径前缀
+    g._apiBase = process.env.VUE_APP_API; // 接口路径前缀
     // cache
     g._sysDate = null; // 服务器时间 Date对象 每次接口返回时更新
     // const

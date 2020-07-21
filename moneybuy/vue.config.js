@@ -23,8 +23,6 @@ module.exports = {
   configureWebpack: {
     devtool: process.env.NODE_ENV === "production" ? "(none)" : "source-map",
   },
-   // 调整内部的 webpack 配置。
-  // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
   configureWebpack: config => {},
   chainWebpack: config => {},
   // CSS 相关选项
@@ -50,6 +48,7 @@ module.exports = {
   },
   lintOnSave: false,
   devServer : {
+    open: process.platform === 'darwin',
     host: '127.0.0.1',
     port: 18080,
     https: false,
@@ -58,7 +57,7 @@ module.exports = {
         // 方式1 local host - js
         '/v1': {
             target: "http://127.0.0.1:18081",
-            changeOrigin: true,
+            changeOrigin: true, // 是否跨域
         },
         // 方式2 local host - js
         // '/v1': {

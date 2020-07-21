@@ -3,18 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --mode development && gulp",
-    "build:production": "vue-cli-service build && gulp",
+    "local": "vue-cli-service serve --open --mode local && gulp",
+    "dev"  : "vue-cli-service build --mode dev && gulp",
+    "stage": "vue-cli-service build --mode stage && gulp",
+    "prod": "vue-cli-service build --mode prod && gulp",
     "lint": "vue-cli-service lint",
-    "start": "npm run dev",
-    "local": "cross-env NODE_ENV=development APP_ENV=local webpack-dev-server --config ./build/webpack.config.js",
-    "server": "node ./server/pointTest/localPointServer.js",
-    "dev": "cross-env NODE_ENV=development APP_ENV=dev webpack-dev-server --config ./build/webpack.config.js",
-    "build-local": "cross-env NODE_ENV=development APP_ENV=local node ./build/build.js",
-    "build-dev": "cross-env NODE_ENV=development APP_ENV=dev node ./build/build.js",
-    "build-staging": "cross-env NODE_ENV=development APP_ENV=staging node ./build/build.js",
-    "build-prod": "cross-env NODE_ENV=production APP_ENV=dist node ./build/build.js",
-    "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
+    "server": "node ./server/pointTest/localPointServer.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
