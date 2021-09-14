@@ -8,8 +8,25 @@
 # install dependencies
 npm install
 
+############################
+# 配置前端本地服务器
+# server/localConfig.js
+# baseURL: '127.0.0.1',
+# port: '9000'
+
+# 启动本地测试服务器
+npm run server 
+############################
+# 配置前端本地服务器
+local.env.js
+# NODE_ENV: '"local"',
+# BASE_API: '"127.0.0.1:9000"',
+
 # serve with hot reload at localhost:8080
-npm run dev
+
+# 启动本地测试画面
+npm run local 
+
 
 # build for production with minification
 npm run build
