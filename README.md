@@ -22,11 +22,9 @@ local.env.js
 # NODE_ENV: '"local"',
 # BASE_API: '"127.0.0.1:9000"',
 
-# serve with hot reload at localhost:8080
-
 # 启动本地测试画面
 npm run local 
-
+############################
 
 # build for production with minification
 npm run build
