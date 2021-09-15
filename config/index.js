@@ -5,7 +5,12 @@
 const path = require('path')
 
 module.exports = {
+  ///////////////////// MPA START /////////////////////////////////
+  //【views】，默认为views，修改这里的配置的同时，也要同时重命名/src/views的这个文件夹名称  
+  moduleName: 'pages', 
+  ///////////////////// MPA END /////////////////////////////////
   local: {
+    env: require('./local.env'),
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -54,16 +59,13 @@ module.exports = {
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
-
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-
     /**
      * Source Maps
      */
-
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',

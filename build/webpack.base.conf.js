@@ -7,12 +7,13 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+//////////////// MPA START ////////////////////////////////
+var entries = utils.getMultiEntry('./src/'+ config.moduleName + '/**/*.js'); // 获得入口js文件
+var chunks = Object.keys(entries);
+console.log('baseChunks', chunks)
+///////////////// MPA END ///////////////////////////////
 module.exports = {
-  context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'
-  },
+  entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -22,10 +23,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    //////////////// MPA START ////////////////////////////////
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'src': path.resolve(__dirname, '../src'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'components': path.resolve(__dirname, '../src/components')
     }
+    //////////////// MPA END ////////////////////////////////
   },
   module: {
     rules: [

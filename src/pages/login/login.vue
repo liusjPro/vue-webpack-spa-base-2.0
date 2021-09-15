@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div id="app" class="wrapper">
     <div class="loginBox">
         <div class="loginBoxCenter">
           <p><label for="username">用户名：</label></p>
@@ -13,7 +13,7 @@
         <div class="loginBoxButtons">
           <button class="loginBtn" @click="doLogin()">登录</button>
           <div>
-            <router-link to="/register">新用户注册</router-link>
+            <a href="register.html">新用户注册</a>
           </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'login',
+  name:'login',
   data() { 
     return {
       loginData: ''
@@ -34,9 +34,9 @@ export default {
         this.loginData = JSON.parse(res.data)
         console.log(this.loginData)
         if (this.loginData.loginStatus) {
-          this.$router.push('/home')
+          window.location.href = 'home.html'
         } else {
-          this.$router.push('/error')
+          window.location.href = 'error.html'
         }
       })
     }
