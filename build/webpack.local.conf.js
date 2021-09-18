@@ -13,18 +13,19 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-const localWebpackConfig = merge(baseWebpackConfig, {
+const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.local.cssSourceMap, usePostCSS: true })
   },
   // cheap-module-eval-source-map is faster for local
   devtool: config.local.devtool,
+
   // these devServer options should be customized in /config/index.js
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
-        { from: /.*/, to: path.posix.join(config.local.assetsPublicPath, 'login.html') },
+        { from: /.*/, to: path.posix.join(config.local.assetsPublicPath, 'index.html') },
       ],
     },
     hot: true,
@@ -51,11 +52,11 @@ const localWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: 'index.html',
-    //   inject: true
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -64,7 +65,7 @@ const localWebpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
-  ],
+  ]
 })
 
 module.exports = new Promise((resolve, reject) => {
@@ -76,33 +77,19 @@ module.exports = new Promise((resolve, reject) => {
       // publish the new Port, necessary for e2e tests
       process.env.PORT = port
       // add port to devServer config
-      localWebpackConfig.devServer.port = port
+      devWebpackConfig.devServer.port = port
+
       // Add FriendlyErrorsPlugin
-      localWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${localWebpackConfig.devServer.host}:${port}`],
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()
         : undefined
       }))
-      resolve(localWebpackConfig)
+
+      resolve(devWebpackConfig)
     }
   })
 })
-/////////////////////////// MPA START /////////////////////////////////////////////
-var pages = utils.getMultiEntry('./src/' + config.moduleName + '/**/*.html');
-/////////////////////////// MPA END /////////////////////////////////////////////
-
-for (var pathname in pages) {
-  // 配置生成的html文件，定义路径等
-  var conf = {
-    filename: pathname + '.html',
-    template: pages[pathname], // 模板路径
-    chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
-    inject: true  // js插入位置
-  };
-  // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
-  localWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
-}
-/////////////////////////////////////////////////////////////////////////////////
